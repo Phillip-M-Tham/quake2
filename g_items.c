@@ -1,9 +1,5 @@
 #include "g_local.h"
-<<<<<<< HEAD
 #include "m_player.h"
-=======
-
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 
 qboolean	Pickup_Weapon (edict_t *ent, edict_t *other);
 void		Use_Weapon (edict_t *ent, gitem_t *inv);
@@ -392,12 +388,10 @@ void	Use_Invulnerability (edict_t *ent, gitem_t *item)
 }
 
 //======================================================================
-<<<<<<< HEAD
+
 //Infinite ammo timer
 
 //======================================================================
-=======
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 
 void	Use_Silencer (edict_t *ent, gitem_t *item)
 {
@@ -545,30 +539,22 @@ void MegaHealth_think (edict_t *self)
 }
 
 qboolean Pickup_Health (edict_t *ent, edict_t *other)
-<<<<<<< HEAD
 {	
-=======
-{
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	if (!(ent->style & HEALTH_IGNORE_MAX))
 		if (other->health >= other->max_health)
 			return false;
 
 	other->health += ent->count;
-<<<<<<< HEAD
 	
 	if (!(ent->style & HEALTH_IGNORE_MAX))
 		if (other->health > other->max_health)
 			other->health = other->max_health;
-=======
 
 	if (!(ent->style & HEALTH_IGNORE_MAX))
 	{
 		if (other->health > other->max_health)
 			other->health = other->max_health;
 	}
-
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	if (ent->style & HEALTH_TIMED)
 	{
 		ent->think = MegaHealth_think;
@@ -614,7 +600,7 @@ qboolean Pickup_Armor (edict_t *ent, edict_t *other)
 	int				newcount;
 	float			salvage;
 	int				salvagecount;
-<<<<<<< HEAD
+
 //ammo powerup
 	gitem_t	*item;
 	int		index;
@@ -625,9 +611,6 @@ qboolean Pickup_Armor (edict_t *ent, edict_t *other)
 	int oldcount5;
 	int oldcount6;
 //end of ammo powerup	
-=======
-
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	// get info on new armor
 	newinfo = (gitem_armor_t *)ent->item->info;
 
@@ -635,7 +618,6 @@ qboolean Pickup_Armor (edict_t *ent, edict_t *other)
 
 	// handle armor shards specially
 	if (ent->item->tag == ARMOR_SHARD)
-<<<<<<< HEAD
 	{	
 		//INFINITE AMMO POWER UP
 		/*if (!old_armor_index)
@@ -696,22 +678,13 @@ qboolean Pickup_Armor (edict_t *ent, edict_t *other)
 			//end for loop
 		//start putting normal ammo counts back
 		//END OF INFINITE AMMO POWERUP
-=======
-	{
-		if (!old_armor_index)
-			other->client->pers.inventory[jacket_armor_index] = 2;
-		else
-			other->client->pers.inventory[old_armor_index] += 2;
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	}
-
 	// if player has no armor, just use it
-	else if (!old_armor_index)
+	else if (!old_armor_index)	
 	{
 		other->client->pers.inventory[ITEM_INDEX(ent->item)] = newinfo->base_count;
 	}
-
-	// use the better armor
+		// use the better armor
 	else
 	{
 		// get info on old armor
@@ -754,10 +727,6 @@ qboolean Pickup_Armor (edict_t *ent, edict_t *other)
 			other->client->pers.inventory[old_armor_index] = newcount;
 		}
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	if (!(ent->spawnflags & DROPPED_ITEM) && (deathmatch->value))
 		SetRespawn (ent, 20);
 
@@ -786,11 +755,7 @@ int PowerArmorType (edict_t *ent)
 void Use_PowerArmor (edict_t *ent, gitem_t *item)
 {
 	int		index;
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	if (ent->flags & FL_POWER_ARMOR)
 	{
 		ent->flags &= ~FL_POWER_ARMOR;

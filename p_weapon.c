@@ -3,11 +3,6 @@
 #include "g_local.h"
 #include "m_player.h"
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 static qboolean	is_quad;
 static byte		is_silenced;
 
@@ -766,7 +761,7 @@ void Weapon_RocketLauncher_Fire (edict_t *ent)
 	VectorSet(offset, 8, 8, ent->viewheight-8);
 	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
 	fire_rocket (ent, start, forward, damage, 650, damage_radius, radius_damage);
-<<<<<<< HEAD
+
 	//shoot other rockets
 	VectorSet(offset, 0, 0, ent->viewheight-8);
 	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
@@ -848,9 +843,7 @@ void Weapon_RocketLauncher_Fire (edict_t *ent)
 	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
 	fire_rocket (ent, start, forward, damage, 625, damage_radius, radius_damage);
 	//end shoot other rockets
-=======
 
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);
 	gi.WriteShort (ent-g_edicts);
@@ -898,11 +891,9 @@ void Blaster_Fire (edict_t *ent, vec3_t g_offset, int damage, qboolean hyper, in
 	VectorScale (forward, -2, ent->client->kick_origin);
 	ent->client->kick_angles[0] = -1;
 
-<<<<<<< HEAD
 	fire_blaster2 (ent);
-=======
-	fire_blaster (ent, start, forward, damage, 1000, effect, hyper);
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
+
+	//fire_blaster (ent, start, forward, damage, 1000, effect, hyper);
 
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);
@@ -933,11 +924,7 @@ void Weapon_Blaster (edict_t *ent)
 {
 	static int	pause_frames[]	= {19, 32, 0};
 	static int	fire_frames[]	= {5, 0};
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	Weapon_Generic (ent, 4, 8, 52, 55, pause_frames, fire_frames, Weapon_Blaster_Fire);
 }
 
@@ -1287,16 +1274,10 @@ void weapon_shotgun_fire (edict_t *ent)
 	}
 
 	if (deathmatch->value)
-<<<<<<< HEAD
 		fire_shotgun (ent);
 	else
 		fire_shotgun (ent);
-=======
-		fire_shotgun (ent, start, forward, damage, kick, 500, 500, DEFAULT_DEATHMATCH_SHOTGUN_COUNT, MOD_SHOTGUN);
-	else
-		fire_shotgun (ent, start, forward, damage, kick, 500, 500, DEFAULT_SHOTGUN_COUNT, MOD_SHOTGUN);
 
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);
 	gi.WriteShort (ent-g_edicts);
@@ -1346,17 +1327,17 @@ void weapon_supershotgun_fire (edict_t *ent)
 	v[YAW]   = ent->client->v_angle[YAW] - 5;
 	v[ROLL]  = ent->client->v_angle[ROLL];
 	AngleVectors (v, forward, NULL, NULL);
-<<<<<<< HEAD
+
 	fire_shotgun2 (ent);
 	v[YAW]   = ent->client->v_angle[YAW] + 5;
 	AngleVectors (v, forward, NULL, NULL);
 	//fire_shotgun (ent);
-=======
+
 	fire_shotgun (ent, start, forward, damage, kick, DEFAULT_SHOTGUN_HSPREAD, DEFAULT_SHOTGUN_VSPREAD, DEFAULT_SSHOTGUN_COUNT/2, MOD_SSHOTGUN);
 	v[YAW]   = ent->client->v_angle[YAW] + 5;
 	AngleVectors (v, forward, NULL, NULL);
 	fire_shotgun (ent, start, forward, damage, kick, DEFAULT_SHOTGUN_HSPREAD, DEFAULT_SHOTGUN_VSPREAD, DEFAULT_SSHOTGUN_COUNT/2, MOD_SSHOTGUN);
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
+
 
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);

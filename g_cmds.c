@@ -139,19 +139,17 @@ void Cmd_Give_f (edict_t *ent)
 	qboolean	give_all;
 	edict_t		*it_ent;
 
-<<<<<<< HEAD
+
 	/*if (deathmatch->value && !sv_cheats->value)
 	{
 		gi.cprintf (ent, PRINT_HIGH, "You must run the server with '+set cheats 1' to enable this command.\n");
 		return;
 	}*/
-=======
 	if (deathmatch->value && !sv_cheats->value)
 	{
 		gi.cprintf (ent, PRINT_HIGH, "You must run the server with '+set cheats 1' to enable this command.\n");
 		return;
 	}
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 
 	name = gi.args();
 
@@ -767,7 +765,7 @@ void Cmd_Wave_f (edict_t *ent)
 		break;
 	}
 }
-<<<<<<< HEAD
+
 /*KICKING 
 ==================
 Cmd_Kick_f
@@ -792,9 +790,6 @@ void Cmd_Kick_f (edict_t *ent)
 	}
 }
 //END OF KICKING CODE
-=======
-
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 /*
 ==================
 Cmd_Say_f

@@ -1,9 +1,7 @@
 #include "g_local.h"
 #include "m_player.h"
-<<<<<<< HEAD
-#include "DOUBLEJUMP.c"
-=======
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
+#include "Doublejump2.c"
+
 
 void ClientUserinfoChanged (edict_t *ent, char *userinfo);
 
@@ -1568,10 +1566,8 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 	edict_t	*other;
 	int		i, j;
 	pmove_t	pm;
-<<<<<<< HEAD
 	float DBLJUMP_HEIGHT;
-=======
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
+
 
 	level.current_entity = ent;
 	client = ent->client;
@@ -1587,8 +1583,7 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 	}
 
 	pm_passent = ent;
-<<<<<<< HEAD
-	
+	//DOUBLE JUMP START	
 	if (ent->groundentity)
 		ent->timestamp = level.time;
 
@@ -1599,7 +1594,7 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		// Play sound
 			gi.sound(ent, CHAN_VOICE, gi.soundindex("world/x_light.wav"), 1, ATTN_NORM, 0);
 			Float_ModVelocity(ent, 0, 0, 300);
-
+	
     // Init the vars
 			ent->dbljumped = true;
 			ent->timestamp = 0;
@@ -1607,10 +1602,7 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 	}
 	if (ent->groundentity && ent->dbljumped == true)
 		ent->dbljumped = false;
-
-=======
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
-
+	//END OF DOUBLE JUMP
 	if (ent->client->chase_target) {
 
 		client->resp.cmd_angles[0] = SHORT2ANGLE(ucmd->angles[0]);
@@ -1638,10 +1630,7 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		{
 			pm.s.origin[i] = ent->s.origin[i]*8;
 			pm.s.velocity[i] = ent->velocity[i]*8;
-<<<<<<< HEAD
-			//pm.s.velocity[0] = ent->velocity[0]*20;
-=======
->>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
+
 		}
 
 		if (memcmp(&client->old_pmove, &pm.s, sizeof(pm.s)))

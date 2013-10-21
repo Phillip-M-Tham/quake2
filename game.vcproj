@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="game"
-	ProjectGUID="{FF15E4B9-4813-4BFB-9150-D94146848C75}"
+	ProjectGUID="{C0A05E09-4BBE-41A2-9FC6-6615EFDEBABA}"
 	RootNamespace="game"
 	TargetFrameworkVersion="0"
 	>
