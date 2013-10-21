@@ -1,5 +1,9 @@
 #include "g_local.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 /*
 =================
 check_dodge
@@ -267,6 +271,7 @@ fire_shotgun
 Shoots shotgun pellets.  Used by shotgun and super shotgun.
 =================
 */
+<<<<<<< HEAD
 void fire_shotgun (edict_t *ent)
 {
 	vec3_t  forward;
@@ -338,6 +343,17 @@ void fire_shotgun2 (edict_t *ent)
 	G_FreeEdict (ent);
 }
 
+=======
+void fire_shotgun (edict_t *self, vec3_t start, vec3_t aimdir, int damage, int kick, int hspread, int vspread, int count, int mod)
+{
+	int		i;
+
+	for (i = 0; i < count; i++)
+		fire_lead (self, start, aimdir, damage, kick, TE_SHOTGUN, hspread, vspread, mod);
+}
+
+
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 /*
 =================
 fire_blaster
@@ -383,6 +399,7 @@ void blaster_touch (edict_t *self, edict_t *other, cplane_t *plane, csurface_t *
 
 	G_FreeEdict (self);
 }
+<<<<<<< HEAD
 //Kicking code-Chris Halton
 void fire_blaster2 (edict_t *ent)
 {
@@ -403,6 +420,8 @@ void fire_blaster2 (edict_t *ent)
  }
 }	
 //End of kicking Code
+=======
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 
 void fire_blaster (edict_t *self, vec3_t start, vec3_t dir, int damage, int speed, int effect, qboolean hyper)
 {
@@ -462,9 +481,12 @@ static void Grenade_Explode (edict_t *ent)
 	vec3_t		origin;
 	int			mod;
 
+<<<<<<< HEAD
 	//Spawn Soccer Ball
 	edict_t *mutant;
 	//End of Spawning soccer Ball
+=======
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	if (ent->owner->client)
 		PlayerNoise(ent->owner, ent->s.origin, PNOISE_IMPACT);
 
@@ -513,6 +535,7 @@ static void Grenade_Explode (edict_t *ent)
 	}
 	gi.WritePosition (origin);
 	gi.multicast (ent->s.origin, MULTICAST_PHS);
+<<<<<<< HEAD
 	
 	//Spawn Soccer Ball
 	mutant=G_Spawn();
@@ -523,6 +546,10 @@ static void Grenade_Explode (edict_t *ent)
 	//End Spawn Soccer Ball
 	G_FreeEdict (ent);
 	//G_FreeEdict (mutant);
+=======
+
+	G_FreeEdict (ent);
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 }
 
 static void Grenade_Touch (edict_t *ent, edict_t *other, cplane_t *plane, csurface_t *surf)
@@ -736,7 +763,11 @@ void fire_rail (edict_t *self, vec3_t start, vec3_t aimdir, int damage, int kick
 	edict_t		*ignore;
 	int			mask;
 	qboolean	water;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	VectorMA (start, 8192, aimdir, end);
 	VectorCopy (start, from);
 	ignore = self;

@@ -708,8 +708,13 @@ qboolean FacingIdeal(edict_t *self);
 void ThrowDebris (edict_t *self, char *modelname, float speed, vec3_t origin);
 qboolean fire_hit (edict_t *self, vec3_t aim, int damage, int kick);
 void fire_bullet (edict_t *self, vec3_t start, vec3_t aimdir, int damage, int kick, int hspread, int vspread, int mod);
+<<<<<<< HEAD
 void fire_shotgun (edict_t *ent);
 void fire_blaster (edict_t *ent);
+=======
+void fire_shotgun (edict_t *self, vec3_t start, vec3_t aimdir, int damage, int kick, int hspread, int vspread, int count, int mod);
+void fire_blaster (edict_t *self, vec3_t start, vec3_t aimdir, int damage, int speed, int effect, qboolean hyper);
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 void fire_grenade (edict_t *self, vec3_t start, vec3_t aimdir, int damage, int speed, float timer, float damage_radius);
 void fire_grenade2 (edict_t *self, vec3_t start, vec3_t aimdir, int damage, int speed, float timer, float damage_radius, qboolean held);
 void fire_rocket (edict_t *self, vec3_t start, vec3_t dir, int damage, int speed, float damage_radius, int radius_damage);
@@ -951,6 +956,10 @@ struct edict_s
 									// the server expects the first part
 									// of gclient_s to be a player_state_t
 									// but the rest of it is opaque
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	qboolean	inuse;
 	int			linkcount;
 
@@ -978,6 +987,10 @@ struct edict_s
 	//================================
 	int			movetype;
 	int			flags;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 	char		*model;
 	float		freetime;			// sv.time when the object was freed
 	
@@ -1089,7 +1102,10 @@ struct edict_s
 	// common data blocks
 	moveinfo_t		moveinfo;
 	monsterinfo_t	monsterinfo;
+<<<<<<< HEAD
 
 	qboolean dbljumped;
+=======
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 };
 

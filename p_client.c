@@ -1,6 +1,9 @@
 #include "g_local.h"
 #include "m_player.h"
+<<<<<<< HEAD
 #include "DOUBLEJUMP.c"
+=======
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 
 void ClientUserinfoChanged (edict_t *ent, char *userinfo);
 
@@ -1565,7 +1568,10 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 	edict_t	*other;
 	int		i, j;
 	pmove_t	pm;
+<<<<<<< HEAD
 	float DBLJUMP_HEIGHT;
+=======
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 
 	level.current_entity = ent;
 	client = ent->client;
@@ -1581,6 +1587,7 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 	}
 
 	pm_passent = ent;
+<<<<<<< HEAD
 	
 	if (ent->groundentity)
 		ent->timestamp = level.time;
@@ -1601,6 +1608,8 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 	if (ent->groundentity && ent->dbljumped == true)
 		ent->dbljumped = false;
 
+=======
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 
 	if (ent->client->chase_target) {
 
@@ -1629,7 +1638,10 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		{
 			pm.s.origin[i] = ent->s.origin[i]*8;
 			pm.s.velocity[i] = ent->velocity[i]*8;
+<<<<<<< HEAD
 			//pm.s.velocity[0] = ent->velocity[0]*20;
+=======
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 		}
 
 		if (memcmp(&client->old_pmove, &pm.s, sizeof(pm.s)))

@@ -954,11 +954,19 @@ void barrel_delay (edict_t *self, edict_t *inflictor, edict_t *attacker, int dam
 
 void SP_misc_explobox (edict_t *self)
 {
+<<<<<<< HEAD
 	/*if (deathmatch->value)
 	{	// auto-remove for deathmatch
 		G_FreeEdict (self);
 		return;
 	}*/
+=======
+	if (deathmatch->value)
+	{	// auto-remove for deathmatch
+		G_FreeEdict (self);
+		return;
+	}
+>>>>>>> 4ab228785e2a6733ea3f7ddae5f06c7e67343303
 
 	gi.modelindex ("models/objects/debris1/tris.md2");
 	gi.modelindex ("models/objects/debris2/tris.md2");
