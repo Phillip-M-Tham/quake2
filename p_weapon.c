@@ -1515,9 +1515,10 @@ void Weapon_Null(edict_t *ent)
 		VectorMA(ent->s.origin,75,forward,goal->s.origin);
 		//goal->s.origin[2]=;
 		VectorCopy(ent->s.origin,goal->s.origin);
-		goal->s.origin[2] -=7;
+		goal->s.origin[2] -=9;
         //mutant->s.origin[2] +=25;
 		SP_misc_teleporter2(goal);
+		
 		G_FreeEdict (ent);
 //gi.centerprintf(ent,"You're not in the game yet, Select a class");
 //return;

@@ -603,6 +603,7 @@ qboolean Pickup_Armor (edict_t *ent, edict_t *other)
         int                                newcount;
         float                        salvage;
         int                                salvagecount;
+		int i;
 
 //ammo powerup
         gitem_t        *item;
@@ -681,7 +682,18 @@ qboolean Pickup_Armor (edict_t *ent, edict_t *other)
                         //end for loop
                 //start putting normal ammo counts back
                 //END OF INFINITE AMMO POWERUP
-        }
+        }//START INCREASE SPEED POWER UP
+		else if (ent->item->tag == ARMOR_COMBAT)
+        {       
+			for (i=0 ; i<3 ; i++)
+                {
+					other->client->ps.pmove.origin[i] = ent->s.origin[i]*4;
+                    other->client->ps.pmove.velocity[i] = ent->velocity[i]*4;
+
+                }
+			gi.dprintf ("MAKE VECOCITY FASTER FOR PLAYER WHO TOUCHED ME\n");
+		}
+		//END OF INCREASE SPEED POWER UP
         // if player has no armor, just use it
         else if (!old_armor_index)        
         {

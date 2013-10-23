@@ -464,6 +464,7 @@ static void Grenade_Explode (edict_t *ent)
 {
         vec3_t                origin;
         int                        mod;
+		edict_t					*attacker;
 
         //Spawn Soccer Ball
         edict_t *mutant;
@@ -523,11 +524,13 @@ static void Grenade_Explode (edict_t *ent)
         mutant->s.origin[2] +=25;
 
         SP_monster_mutant(mutant);
-		 mutant->team = ent->owner->team;
-         mutant->owner = ent->owner;
-                gi.linkentity(mutant);
+		//mutant->activator=ent->owner->client;
+		//gi.linkentity(mutant);
+		// mutant->team = ent->owner->team;
+         //mutant->owner = ent->owner;
+        
         //End Spawn Soccer Ball
-        G_FreeEdict (ent);
+        //G_FreeEdict (ent);
         //G_FreeEdict (mutant);
 
 

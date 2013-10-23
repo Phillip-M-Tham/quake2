@@ -1815,8 +1815,8 @@ void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurfa
 		edict_t				   *mutant;	
         int                        i;
 		int						   x;
-		
-
+		//ent->owner->client=attacker->client;
+		//mutant->activator=ent->owner->client;
 		if (other->client)
 		{        
 			gi.dprintf ("GET A SOCCER BALL\n");
@@ -1824,9 +1824,12 @@ void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurfa
 		}
 		if(other->enemy)
 		{
+			if(mutant->activator==ent->owner->client)
+			gi.dprintf ("BALL MUST DIE\n");
+				//ent->owner->client->resp.score++;
 			//other->enemy->deadflag=DEAD_DEAD;
 			gi.dprintf ("KILLED THE BALL\n");
-			mutant_die2(mutant);
+			mutant_die2(mutant);//,mutant->activator);
 		}
 //		if(x==1)
 //			other->client->resp.score+=15;

@@ -581,10 +581,10 @@ void mutant_die (edict_t *self, edict_t *inflictor, edict_t *attacker, int damag
 		self->monsterinfo.currentmove = &mutant_move_death2;
 }
 //Kill soccer ball
-void mutant_die2 (edict_t *self)//, edict_t *inflictor, edict_t *attacker, int damage, vec3_t point)
+void mutant_die2 (edict_t *self)//,edict_t *attacker)//, edict_t *inflictor, edict_t *attacker, int damage, vec3_t point)
 {
 	edict_t *attacker;
-	edict_t *ent;
+	//edict_t *ent;
 	int		n;
 	//self->owner=ent;
 
@@ -605,6 +605,8 @@ void mutant_die2 (edict_t *self)//, edict_t *inflictor, edict_t *attacker, int d
 	{
 		//Score_Flag(ent); NEED TO FIND A WAY TO ADD SCORE TO OWNER OF SOCCER BALL THAT WAS SCORED
 		gi.dprintf ("Meep\n");
+		//self->activator->client=attacker->client;
+		//self->activator->client->resp.score++;
 		return;
 	}
 	gi.sound (self, CHAN_VOICE, sound_death, 1, ATTN_NORM, 0);
