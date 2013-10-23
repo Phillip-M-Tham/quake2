@@ -1810,30 +1810,30 @@ void teleporter_touch (edict_t *self, edict_t *other, cplane_t *plane, csurface_
 //Goal
 void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurface_t *surf)
 {
-		edict_t				   *attacker;
-		edict_t                *dest;
-		edict_t				   *mutant;	
+                edict_t                                   *attacker;
+                edict_t                *dest;
+                edict_t                                   *mutant;        
         int                        i;
-		int						   x;
-		//ent->owner->client=attacker->client;
-		//mutant->activator=ent->owner->client;
-		if (other->client)
-		{        
-			gi.dprintf ("GET A SOCCER BALL\n");
-			x=0;
-		}
-		if(other->enemy)
-		{
-			if(mutant->activator==ent->owner->client)
-			gi.dprintf ("BALL MUST DIE\n");
-				//ent->owner->client->resp.score++;
-			//other->enemy->deadflag=DEAD_DEAD;
-			gi.dprintf ("KILLED THE BALL\n");
-			mutant_die2(mutant);//,mutant->activator);
-		}
-//		if(x==1)
-//			other->client->resp.score+=15;
-		/*
+                int                                                   x;
+                //ent->owner->client=attacker->client;
+                //mutant->activator=ent->owner->client;
+                if (other->client)
+                {        
+                        gi.dprintf ("GET A SOCCER BALL\n");
+                        x=0;
+                }
+                if(other->enemy)
+                {
+                        if(mutant->activator==ent->owner->client)
+                        gi.dprintf ("BALL MUST DIE\n");
+                                //ent->owner->client->resp.score++;
+                        //other->enemy->deadflag=DEAD_DEAD;
+                        gi.dprintf ("KILLED THE BALL\n");
+                        mutant_die2(mutant);//,mutant->activator);
+                }
+//                if(x==1)
+//                        other->client->resp.score+=15;
+                /*
         if (!other->client)
                 return;
         dest = G_Find (NULL, FOFS(targetname), self->target);
@@ -1859,7 +1859,7 @@ void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurfa
         // draw the teleport splash at source and on the player
         self->owner->s.event = EV_PLAYER_TELEPORT;
         other->s.event = EV_PLAYER_TELEPORT;
-		
+                
         // set angles
         for (i=0 ; i<3 ; i++)
         {
@@ -1874,7 +1874,7 @@ void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurfa
         KillBox (other);
 
         gi.linkentity (other);
-		*/
+                */
 }
 //
 /*QUAKED misc_teleporter (1 0 0) (-32 -32 -24) (32 32 -16)
