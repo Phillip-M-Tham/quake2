@@ -1024,6 +1024,8 @@ struct edict_s
         void                (*think)(edict_t *self);
         void                (*blocked)(edict_t *self, edict_t *other);        //move to moveinfo?
         void                (*touch)(edict_t *self, edict_t *other, cplane_t *plane, csurface_t *surf);
+		//Create touch 2 for goal
+		void				(*touch2) (edict_t *self, edict_t *other);
         void                (*use)(edict_t *self, edict_t *other, edict_t *activator);
         void                (*pain)(edict_t *self, edict_t *other, float kick, int damage);
         void                (*die)(edict_t *self, edict_t *inflictor, edict_t *attacker, int damage, vec3_t point);

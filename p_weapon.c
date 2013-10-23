@@ -1515,6 +1515,7 @@ void Weapon_Null(edict_t *ent)
 		VectorMA(ent->s.origin,75,forward,goal->s.origin);
 		//goal->s.origin[2]=;
 		VectorCopy(ent->s.origin,goal->s.origin);
+		goal->s.origin[2] -=7;
         //mutant->s.origin[2] +=25;
 		SP_misc_teleporter2(goal);
 		G_FreeEdict (ent);

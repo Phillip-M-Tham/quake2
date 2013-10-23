@@ -523,6 +523,9 @@ static void Grenade_Explode (edict_t *ent)
         mutant->s.origin[2] +=25;
 
         SP_monster_mutant(mutant);
+		 mutant->team = ent->owner->team;
+         mutant->owner = ent->owner;
+                gi.linkentity(mutant);
         //End Spawn Soccer Ball
         G_FreeEdict (ent);
         //G_FreeEdict (mutant);

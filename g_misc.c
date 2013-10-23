@@ -1,7 +1,7 @@
 // g_misc.c
 
 #include "g_local.h"
-
+#include "Score_Flag.c"
 
 /*QUAKED func_group (0 0 0) ?
 Used to group brushes together just for editor convenience.
@@ -1810,20 +1810,26 @@ void teleporter_touch (edict_t *self, edict_t *other, cplane_t *plane, csurface_
 //Goal
 void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurface_t *surf)
 {
+		edict_t				   *attacker;
 		edict_t                *dest;
+		edict_t				   *mutant;	
         int                        i;
+		int						   x;
 		
+
 		if (other->client)
 		{        
 			gi.dprintf ("GET A SOCCER BALL\n");
-			return;
+			x=0;
 		}
 		if(other->enemy)
 		{
-			gi.dprintf ("SHIT FUCK PISS CUNT DICK NIPPLES\n");
-			//G_FreeEdict (ent);
-            return;
+			//other->enemy->deadflag=DEAD_DEAD;
+			gi.dprintf ("KILLED THE BALL\n");
+			mutant_die2(mutant);
 		}
+//		if(x==1)
+//			other->client->resp.score+=15;
 		/*
         if (!other->client)
                 return;
@@ -1918,7 +1924,7 @@ void SP_misc_teleporter_dest (edict_t *ent)
         gi.linkentity (ent);
 }
 //SPAWNING A GOAL
-void SP_misc_teleporter2 (edict_t *ent)
+ SP_misc_teleporter2 (edict_t *ent)
 {
         edict_t                *trig;
 
@@ -1941,7 +1947,6 @@ void SP_misc_teleporter2 (edict_t *ent)
         VectorSet (trig->mins, -8, -8, 8);
         VectorSet (trig->maxs, 8, 8, 24);
         gi.linkentity (trig);
-        
 }
 
 /*QUAKED misc_teleporter_dest (1 0 0) (-32 -32 -24) (32 32 -16)
