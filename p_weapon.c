@@ -1274,10 +1274,11 @@ void weapon_shotgun_fire (edict_t *ent)
 	}
 
 	if (deathmatch->value)
-		fire_shotgun (ent);
-	else
-		fire_shotgun (ent);
+			fire_shotgun (ent);//, start, forward, damage, kick, 500, 500, DEFAULT_DEATHMATCH_SHOTGUN_COUNT, MOD_SHOTGUN);
+        else
+            fire_shotgun (ent);//, start, forward, damage, kick, 500, 500, DEFAULT_SHOTGUN_COUNT, MOD_SHOTGUN);
 
+        // send muzzle flash
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);
 	gi.WriteShort (ent-g_edicts);
@@ -1500,6 +1501,28 @@ void Weapon_BFG (edict_t *ent)
 
 	Weapon_Generic (ent, 8, 32, 55, 58, pause_frames, fire_frames, weapon_bfg_fire);
 }
+//spawn a goal
+void Weapon_Null(edict_t *ent)
+{
+	if ((ent->client->buttons|ent->client->buttons) & (BUTTON_ATTACK|BUTTON_USE))
+	{
+		vec3_t  forward;
+		edict_t *goal;
 
-
+		goal=G_Spawn();
+		VectorClear(goal->s.origin);
+		AngleVectors(ent->client->v_angle,forward,NULL,NULL);
+		VectorMA(ent->s.origin,75,forward,goal->s.origin);
+		//goal->s.origin[2]=;
+		VectorCopy(ent->s.origin,goal->s.origin);
+        //mutant->s.origin[2] +=25;
+		SP_misc_teleporter2(goal);
+		G_FreeEdict (ent);
+//gi.centerprintf(ent,"You're not in the game yet, Select a class");
+//return;
+	}
+	if (ent->client->newweapon)
+		ChangeWeapon(ent);
+}
+//end of spawn a goal
 //======================================================================
