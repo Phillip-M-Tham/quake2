@@ -1820,7 +1820,7 @@ void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurfa
                 if (other->client)
                 {        
                         gi.dprintf ("GET A SOCCER BALL\n");
-                        x=0;
+                        return;
                 }
                 if(other->enemy)
                 {
@@ -1830,6 +1830,7 @@ void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurfa
                         //other->enemy->deadflag=DEAD_DEAD;
                         gi.dprintf ("KILLED THE BALL\n");
                         mutant_die2(mutant);//,mutant->activator);
+						return;
                 }
 //                if(x==1)
 //                        other->client->resp.score+=15;
