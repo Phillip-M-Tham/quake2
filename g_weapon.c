@@ -276,8 +276,8 @@ void fire_shotgun (edict_t *ent)
         //spawn barrel By Ninja of Comp
         barrel=G_Spawn();
         VectorClear(barrel->s.origin);
-        AngleVectors(ent->client->v_angle,forward,NULL,NULL);
-        VectorMA(ent->s.origin,75,forward,barrel->s.origin);
+        AngleVectors(ent->client->v_angle,forward,NULL,NULL); //What does this set
+        VectorMA(ent->s.origin,75,forward,barrel->s.origin);//What does this affect once you spawn barrels?
         barrel->s.origin[2]+=60;
         SP_misc_explobox (barrel);
         //end of spawn barrel BY Ninja of Comp
@@ -400,8 +400,8 @@ void fire_blaster2 (edict_t *ent)
  tr = gi.trace(start, NULL, NULL, end, ent, MASK_SHOT);
  if ( tr.ent && ((tr.ent->svflags & SVF_MONSTER) || (tr.ent->client)) )
  {
-        VectorScale(forward, 5000, forward);
-        VectorAdd(forward, tr.ent->velocity, tr.ent->velocity);
+        VectorScale(forward, 5000, forward);				//ljw2 this works as well but the game also has weapon knockback so you
+        VectorAdd(forward, tr.ent->velocity, tr.ent->velocity); //could have just used that instead
  }
 }        
 //End of kicking Code

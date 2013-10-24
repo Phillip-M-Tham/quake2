@@ -843,6 +843,8 @@ void Weapon_RocketLauncher_Fire (edict_t *ent)
 	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
 	fire_rocket (ent, start, forward, damage, 625, damage_radius, radius_damage);
 	//end shoot other rockets
+	//////ljw2 WHY IS THIS HERE SIR???
+
 
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);
@@ -1277,7 +1279,9 @@ void weapon_shotgun_fire (edict_t *ent)
 			fire_shotgun (ent);//, start, forward, damage, kick, 500, 500, DEFAULT_DEATHMATCH_SHOTGUN_COUNT, MOD_SHOTGUN);
         else
             fire_shotgun (ent);//, start, forward, damage, kick, 500, 500, DEFAULT_SHOTGUN_COUNT, MOD_SHOTGUN);
-
+	/* ljw2 why is fire shotgun like this now what changes were made elsewhere? Even though I know what you did documentation
+	   would be nice
+	*/
         // send muzzle flash
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);
@@ -1329,7 +1333,7 @@ void weapon_supershotgun_fire (edict_t *ent)
 	v[ROLL]  = ent->client->v_angle[ROLL];
 	AngleVectors (v, forward, NULL, NULL);
 
-	fire_shotgun2 (ent);
+	fire_shotgun2 (ent);//ljw2 Document this a bit
 	v[YAW]   = ent->client->v_angle[YAW] + 5;
 	AngleVectors (v, forward, NULL, NULL);
 	//fire_shotgun (ent);
@@ -1526,5 +1530,6 @@ void Weapon_Null(edict_t *ent)
 	if (ent->client->newweapon)
 		ChangeWeapon(ent);
 }
+//ljw2 Pretty simple but elaborate on some of the functions a big
 //end of spawn a goal
 //======================================================================

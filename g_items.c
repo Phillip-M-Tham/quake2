@@ -624,6 +624,7 @@ qboolean Pickup_Armor (edict_t *ent, edict_t *other)
         if (ent->item->tag == ARMOR_SHARD)
         {        
                 //INFINITE AMMO POWER UP
+			//ljw2 so what does everything below here do?
                 /*if (!old_armor_index)
                         other->client->pers.inventory[jacket_armor_index] = 2;
                 else

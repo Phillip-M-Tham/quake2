@@ -582,6 +582,7 @@ void mutant_die (edict_t *self, edict_t *inflictor, edict_t *attacker, int damag
 }
 //Kill soccer ball
 void mutant_die2 (edict_t *self)//,edict_t *attacker)//, edict_t *inflictor, edict_t *attacker, int damage, vec3_t point)
+
 {
 	edict_t *attacker;
 	//edict_t *ent;

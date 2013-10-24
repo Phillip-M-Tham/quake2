@@ -1095,5 +1095,5 @@ struct edict_s
         moveinfo_t                moveinfo;
         monsterinfo_t        monsterinfo;
 
-        qboolean dbljumped;
+        qboolean dbljumped; //ljw this is a boolean for double jump
 };

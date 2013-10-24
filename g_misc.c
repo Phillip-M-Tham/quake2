@@ -959,6 +959,7 @@ void SP_misc_explobox (edict_t *self)
                 G_FreeEdict (self);
                 return;
         }*/
+	//ljw haha I see what you did there
 
         gi.modelindex ("models/objects/debris1/tris.md2");
         gi.modelindex ("models/objects/debris2/tris.md2");
@@ -1824,7 +1825,7 @@ void teleporter_touch2 (edict_t *ent, edict_t *other)//, cplane_t *plane, csurfa
 		}
 		if(other->enemy)
 		{
-			if(mutant->activator==ent->owner->client)
+			if(mutant->activator==ent->owner->client) //ljw2 What exactly does this do
 			gi.dprintf ("BALL MUST DIE\n");
 				//ent->owner->client->resp.score++;
 			//other->enemy->deadflag=DEAD_DEAD;
